@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:webServiceHw"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
+    x:Class="webServiceHw.MainPage">
+    <StackLayout>
+        
+        <Entry Placeholder="Enter word here to define..." Completed="Handle_Completed" BackgroundColor="Blue"
+               TextColor="White"
+               />
+        <Label x:Name="nullObject"/>
+        <ListView
+            x:Name="defListView"
+            HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Padding="5">
+                            <Label
+                                Text="{Binding Type}"
+                                FontAttributes="Bold" />
+                            <Label
+                                Text="{Binding Definition}"
+                            FontAttributes="Italic"/>
+                            <Label
+                                 Text="{Binding Example}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
